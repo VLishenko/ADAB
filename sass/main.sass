@@ -1,0 +1,214 @@
+@import "bourbon/bourbon"
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+@mixin bdr($bdr) 
+	border-radius: $bdr
+	-moz-border-radius: $bdr
+	-webkit-border-radius: $bdr
+
+@mixin box-shadow($top, $left, $blur, $color) 
+	-webkit-box-shadow: $top $left $blur $color
+	-moz-box-shadow: $top $left $blur $color
+	box-shadow: $top $left $blur $color
+
+body
+	font-family: "GothamProLighter", sans-serif
+	font-size: 14px
+	min-width: 300px
+	position: relative
+	line-height: 1.42857
+	-webkit-font-smoothing: antialised
+// body input:focus:required:invalid,
+// body textarea:focus:required:invalid
+// 	color: red
+// body input:required:valid,
+// body textarea:required:valid
+// 	color: green
+
+html, body
+	overflow: hidden
+	height: 100%
+	-webkit-overflow-scrolling: touch
+	height: 100%
+
+
+*
+	margin: 0
+	padding: 0
+.hidden
+	display: none
+ul
+	list-style: none
+	padding: 0
+	margin: 0
+a:hover,
+a:visited,
+a:link,
+a:active 
+	text-decoration: none
+a
+	color: #7d7f7e
+	transition: all .3s ease
+a:hover
+	color: #00c4fd
+
+a
+	outline: none !important
+body
+	background-color: #fff
+h1
+	padding: 0
+	margin: 0
+
+html,
+body 
+	height: 100%
+	max-width: 1920px
+	margin: auto
+
+.wrapper
+	display: flex
+	flex-direction: column
+	width: 100%
+	height: 100%
+	margin: auto
+	transition: all .5s ease
+	&.--max-width
+		max-width: 1903px
+	&.--padding
+		padding: 0 100px
+
+.content 
+	flex: 1 0 auto
+.footer 
+	flex: 0 0 auto
+// Header
+.header
+	display: inline-block
+	width: 100%
+.header-logo
+	transition: all .5s ease
+	&.--position
+		// margin-top: 115px
+		margin-top: 11.4vh
+		float: left
+
+.header-navigation 
+	transition: all .5s ease
+	&.--font-style
+		font-family: GothamPro
+		font-size: 12px
+		text-transform: uppercase
+
+	&.--position
+		float: right
+		// margin-top: 122px
+		margin-top: 12vh
+
+	& .--list-style li
+		display: inline-block
+		margin-left: 60px
+
+	& .__mobile-navigation 
+		&.--position
+			margin-right: 48px
+			margin-top: -2px
+		& .fa-bars
+			font-size: 25px
+
+// Dots Navigation
+.dots-navigation
+	&.--position
+		position: fixed
+		left: 0
+		top: 50%
+		margin-top: -95px
+		margin-left: 50px
+	ul
+		font-size: 0
+	a
+		display: inline-block
+		margin-bottom: 32px	
+	i
+		font-size: 12px	
+	& .fa-circle
+		display: none
+	a:hover 
+		& .fa-circle
+			display: block
+		& .fa-circle-o
+			display: none
+
+//Social Links
+.social-links
+	font-size: 21px
+	&.--position
+		position: fixed
+		right: 0
+		top: 50%
+		margin-right: 50px
+		margin-top: -60px
+	li
+		margin-bottom: 12px
+		text-align: center
+
+//Footer
+.footer
+	.copyright
+		margin-bottom: 4vh
+		font-size: 12px
+
+// About Us
+.about-us
+	&__navigation
+		ul
+			margin-left: 19%
+		li
+			display: inline-block
+			margin-right: 62px
+		a
+			font-family: GothamPro
+			font-size: 16px
+			text-decoration: underline
+		&.--position
+			margin-top: 42px
+.about-us-content
+	&.--position
+		padding-left: 327px
+		padding-top: 55px
+		position: relative
+		height: 70vh
+	& .__title
+		position: absolute
+		transform: rotateZ(-90deg)
+		color: #151515
+		font-family: GothamProBold
+		text-transform: uppercase
+		text-align: right
+		h1
+			font-size: 65px
+			position: absolute
+			top: 54px
+			right: 0
+			line-height: 0
+		&.--about-us-styles
+			bottom: 90px
+			left: -164px
+			& .__title-bg
+				font-size: 210px
+	& .__title-bg
+		display: inline-block
+		line-height: 0
+		opacity: 0.07
+
+.about-studio
+	display: flex
+	align-items: center
+	img
+		float: left
+		margin-right: 60px
+	& .__text
+		font-size: 16px
+		//margin-top: -80px
+		max-width: 700px
+		
