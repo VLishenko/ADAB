@@ -140,6 +140,8 @@ body {
 .about-us__navigation li {
   display: inline-block;
   margin-right: 62px; }
+  .about-us__navigation li:last-child {
+    margin-right: 0; }
 .about-us__navigation a {
   font-family: GothamPro;
   font-size: 16px;
@@ -180,7 +182,13 @@ body {
   align-items: center; }
   .about-studio img {
     float: left;
-    margin-right: 60px; }
+    margin-right: 60px;
+    margin-bottom: 20px;
+    width: 30%;
+    max-width: 454px;
+    min-width: 200px;
+    max-height: 596px;
+    transition: all 0.3s ease; }
   .about-studio .__text {
     font-size: 16px;
     max-width: 700px; }

@@ -3,6 +3,22 @@
 
 		<!-- Start Footer -->
 		<footer class="footer">
+			<!-- Start Social Links -->
+			<div class="social-links --position">
+				<ul>
+					<li>
+						<a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+					</li>
+				</ul>
+			</div>
+			<!-- End Social Links -->
+	
 			<span class="copyright pull-right">
 				© 2016-2017, PleaseData.ru
 			</span>
@@ -11,7 +27,7 @@
 	</div>
 
 	<!-- Start Dots Navigation -->
-	<div class="dots-navigation --position visible-lg visible-md">
+	<div class="dots-navigation --position visible-lg">
 		<ul>
 			<li>
 				<a href="#">
@@ -45,24 +61,7 @@
 			</li>
 		</ul>
 	</div>
-	<!-- End Dots Navigation -->
-
-	<!-- Start Social Links -->
-	<div class="social-links --position">
-		<ul>
-			<li>
-				<a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-			</li>
-		</ul>
-	</div>
-	<!-- End Social Links -->
-	
+	<!-- End Dots Navigation -->	
 	
 	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
 	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>

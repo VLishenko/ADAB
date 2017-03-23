@@ -1,7 +1,7 @@
 /*==========  Desktop First Method  ==========*/
  /* Height*/
-/*@media only screen and (max-height : 1000px) {
-	.about-us-content .__title {
+@media only screen and (max-height : 1000px) {
+/*	.about-us-content .__title {
 		bottom: 242px;
 		left: -154px;
 	}
@@ -12,8 +12,11 @@
 	}
 	.about-us-content .__title-bg {
 		font-size: 86px;
+	}*/
+	.about-studio img {
+		max-width: 350px;
 	}
-}*/
+}
 @media only screen and (max-height : 768px) {
 	.header-logo.--position {
 		margin-top: 8.4vh;
@@ -24,10 +27,51 @@
 	.about-us__navigation.--position {
 		margin-top: 58px;
 	}
+	.about-studio img {
+		max-width: 250px;
+	}
+}
+@media only screen and (max-height : 599px) {
+	html, 
+	body {
+		overflow: auto;
+	}
+	.about-us-content .__title.--about-us-styles {
+		bottom: auto;
+		top: 200px;
+	}
+	.about-us-content.--position {
+		height: auto;
+	}
+	
+}
+@media only screen and (max-height : 599px) and (max-width : 960px) {
+	.social-links.--position {
+		position: static;
+		margin: 0;
+		float: left;
+	}
+	.social-links li {
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+@media only screen and (max-height : 700px) {
+	.about-us-content .__title.--about-us-styles {
+		bottom: 126px;
+    		left: -116px;
+	}
+	.about-us-content .__title.--about-us-styles .__title-bg {
+		font-size: 100px;
+	}
+	.about-us-content .__title h1 {
+		    top: 12px;
+		    right: 0;
+	}
 }
 @media only screen and (max-height : 420px) {
-	.dots-navigation,
-	.social-links {
+	.dots-navigation {
 		display: none !important;
 	}
 }
@@ -40,6 +84,24 @@
 @media only screen and (max-width : 1200px) {
 	.wrapper.--padding {
 		padding: 0 50px;
+	}
+
+	.about-us-content .__title.--about-us-styles {
+		bottom: 126px;
+    		left: -116px;
+	}
+	.about-us-content .__title.--about-us-styles .__title-bg {
+		font-size: 100px;
+	}
+	.about-us-content .__title h1 {
+	    top: 12px;
+	    right: 0;
+	}
+	.about-us-content.--position {
+		padding-left: 134px;
+	}
+	.about-studio .__text {
+		max-width: 55%;
 	}
 }
 
@@ -58,15 +120,95 @@
 	.header-logo.--position {
 		margin-left: 25px;
 	}
+	.about-studio {
+		padding-top: 30px;
+	}
+	.about-studio img {
+		margin-right: 20px;
+	}
+	.about-us__navigation ul {
+		margin-left: 0;
+		text-align: center;
+	}
+	.about-us__navigation.--position {
+		margin-top: 10px;
+	}
+	.about-us-content.--position {
+		padding-top: 20px;
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+	html, 
+	body {
+		overflow: auto;
+	}
 	.header-logo.--position {
 		margin-top: 12vh;
 	}
+	.about-studio {
+		flex-direction: column;
+	}
+	.about-us-content.--position {
+		padding-left: 0;
+	}
+	.about-studio img {
+		margin-right: 0;
+	}
+	.about-us-content .__title.--about-us-styles {
+		bottom: auto;
+		top: 200px;
+	}
+	.about-us-content.--position {
+		height: auto;
+		padding-bottom: 30px;
+	}
+	.about-studio .__text {
+		text-align: center;
+	}
+	.about-us__navigation li {
+	 	margin-bottom: 20px;
+	}
 }
+@media only screen and (max-width : 600px) {
+	.social-links.--position {
+		position: static;
+		margin: 0;
+		float: left;
+	}
+	.social-links li {
+		display: inline-block;
+		margin-right: 5px;
+	}
 
+	.about-us-content .__title {
+		display: none;
+	}
+	.footer .social-links,
+	 .footer .copyright {
+	 	line-height: 20px;
+	 }
+	.about-studio .__text {
+	 	max-width: 90%;
+	 }
+	 .about-us__navigation ul {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	 }
+	.about-us__navigation ul li {
+	 	width: 49%;
+	 	margin-right: 0;
+	 }
+	.about-us__navigation ul li:odd  {
+	 	text-align: left;
+	 }
+	.about-us__navigation ul li:even {
+	 	text-align: right;
+	 }
+
+}
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 

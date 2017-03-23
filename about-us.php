@@ -21,7 +21,7 @@
 	
 	<!-- Start About Us Content -->
 	<div class="about-us-content --position">
-		<div class="__title --about-us-styles">
+		<div class="__title --about-us-styles ">
 			<div class="__title-bg">О нас</div>
 			<h1>О нас</h1>
 		</div>
