@@ -1,0 +1,49 @@
+// Main
+html, 
+body
+	height: 100%
+	margin: 0 auto
+	background-image: url("../images/main-bg.jpg")
+	background-repeat: no-repeat
+	background-color: #000
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+.header-logo 
+	img
+		-webkit-filter: brightness(100%)
+		filter: brightness(100%)
+.sw-topper,
+.sw-bottom,
+.sw-footer
+	background-color: #fff
+#particles-js
+	display: none !important
+
+.main-hidden
+	display: none !important
+
+.dots-navigation,
+.social-links,
+	animation-delay: 1.4s
+
+.header-navigation,
+.header-logo
+	animation-delay: .6s
+
+.main-title--name, 
+.main-title--description,
+.portfolio-link
+	animation-duration: .8s
+
+@media only screen and (max-width : 1024px)
+	html, 
+	body
+		background: url("../images/main-bg-sm-2.jpg") center top
+		background-size: cover
+@media only screen and (max-height : 400px)
+	html, 
+	body
+		background: url("../images/main-bg-sm.jpg") center top
+		background-size: cover

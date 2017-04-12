@@ -12,21 +12,22 @@
 	box-shadow: $top $left $blur $color
 
 body
-	font-family: "GothamProLighter", sans-serif
+	font-family: "GothamPro", sans-serif
 	font-size: 14px
 	min-width: 300px
 	position: relative
 	line-height: 1.42857
 	-webkit-font-smoothing: antialised
+	font-size: 62.5%
 // body input:focus:required:invalid,
 // body textarea:focus:required:invalid
 // 	color: red
 // body input:required:valid,
-// body textarea:required:valid
+//f body textarea:required:valid
 // 	color: green
 
 html, body
-	overflow: hidden
+	// overflow: hidden
 	height: 100%
 	-webkit-overflow-scrolling: touch
 	height: 100%
@@ -36,7 +37,7 @@ html, body
 	margin: 0
 	padding: 0
 .hidden
-	display: none
+	display: none !important
 ul
 	list-style: none
 	padding: 0
@@ -51,9 +52,12 @@ a
 	transition: all .3s ease
 a:hover
 	color: #00c4fd
-
-a
+a,
+div[class*='col']
 	outline: none !important
+
+
+
 body
 	background-color: #fff
 h1
@@ -63,22 +67,31 @@ h1
 html,
 body 
 	height: 100%
-	max-width: 1920px
+	// max-width: 1920px
 	margin: auto
-
+#particles-js
+	position: fixed
+	width: 100%
+	height: 100%
+	z-index: 1
 .wrapper
+	position: relative
+	font-size: 16px
 	display: flex
 	flex-direction: column
 	width: 100%
 	height: 100%
 	margin: auto
 	transition: all .5s ease
-	&.--max-width
+	z-index: 2
+	&--max-width
 		max-width: 1903px
-	&.--padding
+	&--padding
 		padding: 0 100px
 
+
 .content 
+	position: relative
 	flex: 1 0 auto
 .footer 
 	flex: 0 0 auto
@@ -87,38 +100,42 @@ body
 	display: inline-block
 	width: 100%
 .header-logo
-	transition: all .5s ease
-	&.--position
+	// transition: all .5s ease
+	img
+		-webkit-filter: brightness(0)
+		filter: brightness(0)
+	&--position
 		// margin-top: 115px
 		margin-top: 11.4vh
 		float: left
 
 .header-navigation 
 	transition: all .5s ease
-	&.--font-style
-		font-family: GothamPro
-		font-size: 12px
+	&--font-style
+		font-family: GothamProMedium
+		font-size: 14px
 		text-transform: uppercase
 
-	&.--position
+	&--position
 		float: right
 		// margin-top: 122px
 		margin-top: 12vh
 
-	& .--list-style li
+	&--list-style li 
 		display: inline-block
 		margin-left: 60px
 
-	& .__mobile-navigation 
-		&.--position
+	&__mobile-navigation 
+		cursor: pointer
+		&--position
 			margin-right: 48px
-			margin-top: -2px
-		& .fa-bars
-			font-size: 25px
+		// & .fa-bars
+		// 	font-size: 25px
 
 // Dots Navigation
 .dots-navigation
-	&.--position
+	z-index: 3
+	&--position
 		position: fixed
 		left: 0
 		top: 50%
@@ -126,11 +143,14 @@ body
 		margin-left: 50px
 	ul
 		font-size: 0
+	li
+		position: relative
 	a
 		display: inline-block
 		margin-bottom: 32px	
 	i
 		font-size: 12px	
+		padding-right: 10px
 	& .fa-circle
 		display: none
 	a:hover 
@@ -138,11 +158,29 @@ body
 			display: block
 		& .fa-circle-o
 			display: none
-
+	.popover
+		display: inline-block
+		position: absolute
+		top: -5px
+		left: 100%
+		// right: -130px
+		line-height: 25px
+		font-size: 18px
+		// max-width: 130px
+		z-index: 1
+		color: #7d7f7e
+		background-color: rgba(237, 237, 237, 0.9)
+		border: 1px solid #7d7f7e
+		height: 24px
+		padding: 0 10px
+		border-radius: 8px
+		transition: all .5s ease
+		animation-duration: .5s
+		// opacity: 0
 //Social Links
 .social-links
 	font-size: 21px
-	&.--position
+	&--position
 		position: fixed
 		right: 0
 		top: 50%
@@ -151,6 +189,21 @@ body
 	li
 		margin-bottom: 12px
 		text-align: center
+	i
+		color: #7d7f7e
+		transition: all .3s ease
+	a:hover  .fa-vk
+		color: #597da3
+	a:hover .fa-facebook-square
+		color: #4862a3
+	a:hover .fa-instagram
+		color: #326189
+.ic-instagram
+	margin-top: -4px
+	filter: contrast(0%)
+	transition: all .3s ease
+	&:hover
+		filter: contrast(100%)
 
 //Footer
 .footer
@@ -162,7 +215,8 @@ body
 .about-us
 	&__navigation
 		ul
-			margin-left: 19%
+			// margin-left: 19%
+			margin-left: 10%
 		li
 			display: inline-block
 			margin-right: 62px
@@ -172,35 +226,46 @@ body
 			font-family: GothamPro
 			font-size: 16px
 			text-decoration: underline
-		&.--position
+		&--position
 			margin-top: 42px
+		fieldset
+			button:last-child
+				margin-right: 0
 .about-us-content
-	&.--position
-		padding-left: 327px
+	width: 100%
+	transition: all .3s ease
+	&--position
+		// padding-left: 19%
+		padding-left: 9%
 		padding-top: 55px
 		position: relative
-		height: 70vh
-	& .__title
+		// height: 70vh
+	&__title
 		position: absolute
 		transform: rotateZ(-90deg)
+		transform-origin: left top
 		color: #151515
 		font-family: GothamProBold
 		text-transform: uppercase
 		text-align: right
+		transition: all .8s ease
 		h1
 			font-size: 65px
-			position: absolute
-			top: 54px
-			right: 0
-			line-height: 0
-		&.--about-us-styles
-			bottom: 90px
-			left: -164px
-			& .__title-bg
-				font-size: 210px
-	& .__title-bg
+			// position: absolute
+			// top: 54px
+			// right: 0
+			// line-height: 0
+		&--styles
+			// bottom: 90px
+			// left: -164px
+			left: 0
+			top: 55px
+			opacity: 0
+			// margin-left: 6%
+	&__title-bg
 		display: inline-block
 		line-height: 0
+		font-size: 210px
 		opacity: 0.07
 
 .about-studio
@@ -215,8 +280,791 @@ body
 		min-width: 200px
 		max-height: 596px
 		transition: all .3s ease
-	& .__text
+	&__text
 		font-size: 16px
 		//margin-top: -80px
 		max-width: 700px
+
+//About Us Specialization
+//About Us Case
+.specialization,
+.case
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	.min-width
+		min-width: 320px
+.specialization-block,
+.case-block
+	width: 320px
+	height: 154px
+	background-image: url("../img/specialization-bg.png")
+	text-align: center
+	margin-bottom: 65px
+	margin-right: 10px
+	.work-type
+		font-size: 20px
+	.count
+		font-size: 48px
+		font-family: GothamProBold
+	.numbers
+		display: none
+.specialization-block
+	padding: 25px 35px 0 35px
+	span
+		display: block
+		margin: auto
+	.count
+		width: 60px
+		height: 60px
+		transform: rotateZ(-90deg)
+.case-block
+	padding: 10px 35px 0 35px
+
+// Our Team
+//Portfolio
+//Our Clients
+.our-team-wrap,
+.portfolio-wrap,
+.our-clients-wrap,
+.contacts-wrap
+	// margin-left: -8px
+	flex-wrap: wrap
+	display: flex
+	transition: all .3s ease
+.our-team,
+.team-join-wrap,
+.portfolio,
+.our-clients
+	margin: 8px
+.our-team,
+.portfolio,
+.our-clients
+	display: inline-block
+	position: relative
+.our-team,
+.portfolio
+	&:hover &__team-member-info,
+	&:hover &__portfolio-info
+		opacity: 1
+		//background-color: rgba(0,0,0, .6)
+	&__team-member-info,
+	&__portfolio-info
+		position: absolute
+		height: 100%
+		width: 100%
+		top: 0
+		left: 0
+		z-index: 2
+		// padding: 1rem 3rem
+		font-size: 2.2rem
+		opacity: 0
+		transition: all .3s ease
+		span
+			display: block
+		& .name
+			font-family: GothamProBold
+			padding: 1.4rem 0
+	&__team-member-info,
+	&__portfolio-info > a
+		padding: 1rem 3rem
+	&__portfolio-info > a
+		display: inline-block
+		width: 100%
+		height: 100%
+.our-team,
+.our-clients
+	img
+		width: 100%
+		max-width: 293px
+	&__team-member-info
+		background-color: #00c4fd
+.team-join-flex
+	display: flex
+.team-join-wrap
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	width: calc(100% - 16px)
+	max-width: 293px
+	transition: all 0.6s ease
+	border: 1px solid #000
+	&:hover
+		// background-color: rgba(238, 238, 238, 0.7)
+		background-color: #00c4fd
+		border: 1px solid #00c4fd
+		color: #fff
+.team-join
+	display: flex
+	flex-direction: column
+	justify-content: center
+	text-align: center
+	width: 100%
+	height: 100%
+	font-size: 2.2rem
+	cursor: pointer
+	span
+		display: block
+	&__plus-ic
+		font-size: 10rem
+		line-height: 9.6rem
+	
+//Portfolio
+.portfolio-block
+	text-align: left
+	max-width: 440px			
+.portfolio
+	text-align: left
+	overflow: hidden
+	margin: auto
+	// padding: 10px
+	width: calc(100% - 16px)
+	height: calc(100% - 16px)
+	img
+		width: 100%
+		max-width: 440px
+		transform: scale(1)
+		transition: all 1s ease
+
+	.name
+		color: #fff
+		opacity: 0
+		transform: translateY(-50%)
+		transition: 0.3s ease 0s
+	.read-more
+		color: #00c4fd
+		opacity: 0
+		transform: translateX(-50%)
+		transition: 0.3s ease 0s
+
+	&__portfolio-info
+		// width: calc(100% - 16px)
+		// height: calc(100% - 16px)
+		left: 0px
+		top: 0px
+		opacity: 1
+		&__bg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transition: 0.6s ease .8s
+			z-index: -1
+	&:hover 
+		.read-more
+			opacity: 1
+			transform: translateX(0%)
+		.name
+			opacity: 1
+			transform: translateY(0%)
+		img
+			transform: scale(1.2)
+	&:hover 
+		.portfolio__portfolio-info__bg
+			background-color: rgba(0,0,0, .6)
+			transition: 0.6s ease 0s
+
+	// &:hover .portfolio-eye	
+	// 	display: none
+	&:hover .read-more
+		visibility: visible
+	& .read-more
+		font-size: 1.8rem
+		visibility: hidden
+
+.portfolio:hover 
+	.portfolio-border
+		&--top-left-to-right
+			transition: 0.2s ease 0s
+		&--right-top-to-bottom
+			transition: 0.2s ease 0.2s
+		&--bottom-right-to-left
+			transition: 0.2s ease 0.4s
+		&--left-bottom-to-top
+			transition: 0.2s ease 0.6s
+
+		&--top-left-to-right,
+		&--bottom-right-to-left
+			width: 100%
+		&--right-top-to-bottom,
+		&--left-bottom-to-top
+			height: 100%
+
+.portfolio-border
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	transition: 0.6s ease 0s
+	&--top-left-to-right
+		position: absolute
+		top: 0
+		left: 0
+		height: 15px
+		//width: 100%
+		width: 0
+		background-color: #00c4fd
+		transition: 0.2s ease 0.6s
+	&--right-top-to-bottom
+		position: absolute
+		top: 0
+		right: 0
+		//height: 100%
+		height: 0
+		width: 15px
+		background-color: #00c4fd
 		
+		transition: 0.2s ease 0.4s
+	&--bottom-right-to-left
+		position: absolute
+		bottom:  0
+		right: 0
+		//width: 100%
+		width: 0
+		height: 15px
+		background-color: #00c4fd
+
+		transition: 0.2s ease 0.2s
+	&--left-bottom-to-top
+		position: absolute
+		bottom:  0
+		left: 0
+		//height: 100%
+		height: 0
+		width: 15px
+		background-color: #00c4fd
+		
+		transition: 0.2s ease 0s
+
+// .portfolio-eye,
+// .team-eye
+// 	display: none
+// 	position: absolute
+// 	// display: flex
+// 	justify-content: center
+// 	width: 100%
+// 	height: 100%
+// 	left: 0
+// 	top: 0
+// 	text-align: center
+// 	background-color: rgba(0, 0, 0, 0.6)
+// 	z-index: 10
+// 	img
+// 		width: 60px
+.our-team
+	&:hover .team-eye	
+		display: none
+.about-us__navigation
+	fieldset
+		margin-left: 10%
+		border: none
+		padding: 0
+		color: #7d7f7e
+	button
+		display: inline-block
+		margin-right: 62px
+		font-family: GothamPro
+		font-size: 14px
+		text-decoration: underline
+		border: none
+		background-color: transparent
+		outline: none !important
+		transition: all .3s ease
+		&:hover
+			color: #00c4fd
+.show-more
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: 2.2rem
+	width: 303px
+	height: 75px
+	border: 1px solid black
+	border-radius: 38px
+	text-align: center
+	cursor: pointer
+	transition: all .6s ease
+	margin-left: 10px !important
+	margin-right: 10px !important
+	&:hover
+		background-color: #00c4fd
+		border: 1px solid #00c4fd
+		color: #fff
+	&:active
+		background-color: #04b7eb
+		border: 1px solid #04b7eb
+		color: #fff
+	span
+		padding: 0 10px
+		margin-top: 2px
+		margin-left: -2px
+	.fa
+		font-size: 32px
+	&--position
+		margin: auto
+		margin-top: 40px
+
+.pager-list
+	display: flex
+	justify-content: center
+.page-number
+	display: none
+.pager.disabled
+	display: none
+//Our Clients
+.our-clients
+	&--position
+		width: 100%
+		margin-top: 42px
+	&__title
+		display: block
+		// margin-left: 19%
+		margin-left: 7%
+		font-size: 2.4rem
+	img
+		filter: gray
+		filter: grayscale(1)
+		-webkit-filter: grayscale(1)
+		transition: all .5s ease
+		cursor: pointer
+		&:hover
+			filter: none
+			-webkit-filter: grayscale(0)
+.clients-slider 
+	width: 100%
+.slick-track
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+.clients-form
+	&__title
+		font-size: 3rem
+		font-family: GothamProBold
+		&--position
+			margin-top: 4vh
+			margin-top: 10vh
+		a
+			white-space: nowrap
+			text-decoration: underline
+			color: #115bc1		
+.clients-form__form,
+.team-join-form
+	label,
+	input,
+	textarea
+		display: block
+		width: 91%
+		font-size: 1.6rem
+	label
+		color: #7d7f7e
+		font-family: GothamProMedium
+	input,
+	textarea
+		color: #b0b3b2
+		background-color: #e9e9e9
+		border: none
+		border-radius: 3px
+		padding: 0 22px
+	input
+		height: 51px
+	input[type=submit] 
+		margin-top: 10px
+		height: 75px
+		background-color: rgba(255, 255, 255, .7)
+		border: 1px solid black
+		color: #151515
+		border-radius: 38px
+		outline: none
+		transition: all .3s ease
+		&:hover
+			border-color: #ccc
+			background-color: #00c4fd
+			border-color:  #00c4fd
+			//text-shadow: 2px 2px 1px rgba(0,0,0,.2)
+			color: #fff
+		&:active
+			background-color: #04b7eb
+			border: 1px solid #04b7eb
+	textarea
+		width: 97%
+		padding: 10px 22px
+	&--position
+		margin-top: 2vh
+
+//Contacts
+.contacts-map
+	width: 100%
+	iframe
+		width: 100%
+		height: 560px
+		max-width: 870px
+		padding-right: 40px
+
+.address,
+.contacts
+	//margin-left: 20px
+	font-size: 2rem
+	//margin-top: 6vh
+	&__title
+		font-size: 4.8rem
+		margin-bottom: 1rem
+		text-transform: uppercase
+		font-family: GothamProBold
+.contacts
+	&__content
+		a
+			display: block
+		.mail
+			margin-top: 1rem
+			text-decoration: underline
+.address, 
+.contacts 
+	margin-top: 0
+
+.contact-info-wrap 
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+	align-content: space-around
+
+.small-title 
+	display: none
+	font-size: 24px
+	margin-bottom: 1.5vh
+	//margin-top: 4vh
+	margin-top: 1vh
+	font-family: GothamProBold
+	text-transform: uppercase
+
+// Portfolio Case
+.portfoliio-case
+	&--title
+		font-size: 36px
+		font-family: GothamProBold
+		transition: all .3s ease
+	&--title,
+	&--date
+		width: 100%
+		transition: all .3s ease
+	&--date
+		font-size: 18px
+		color: #b9b9b9
+		margin: 26px 0
+	&--content
+		color: #565656
+		font-size: 24px
+		transition: all .3s ease
+		a
+			font-size: 18px
+			color: #0e8aff
+			font-family: GothamProMedium
+		img
+			max-width: 100%
+			height: auto
+
+.portfoliio-case-slider
+	max-width: 100%
+	img
+		cursor: none
+	&:hover
+		cursor:  pointer
+		// cursor: url(../img/cursor.png) 2 2, pointer
+	.slick-prev,
+	.slick-next
+		z-index: 2
+		width: 50% !important
+		height: 100% !important
+		opacity: 1 !important
+		cursor: none
+		opacity: 0 !important
+	.slick-prev
+		left: 0
+		&:hover
+			// cursor: url(../img/arrow-left.svg), w-resize
+			cursor: url(../img/cursor-left.png), w-resize
+	.slick-next
+		right: 0
+		&:hover
+			// cursor: url(../img/arrow-right.svg), e-resize
+			cursor: url(../img/cursor-right.png), e-resize
+
+/* Head menu */
+.header_menu
+	position: relative
+	display: inline-block
+	float: right
+	//position: fixed
+	// width: 60px
+	// height: 60px
+	top: 14px
+	right: 20px
+	// background-color: #000
+	z-index: 200
+	transition: all .3s ease
+
+.sandwich 
+	width: 34px
+	height: 34px
+	position: absolute
+	top: 10px
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	z-index: 200
+
+.sw-topper 
+	position: relative
+	top: 0
+	width: 34px
+	height: 3px
+	background: #000
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+
+.sw-bottom 
+	position: relative
+	width: 34px
+	height: 3px
+	top: 7.5px
+	background: #000
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+
+.sw-footer 
+	position: relative
+	width: 34px
+	height: 3px
+	top: 15.3px
+	background: #000
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+
+.sandwich.active .sw-topper 
+	top: 10px
+	transform: rotate(140deg)
+	background: #00c4fd
+
+.sandwich.active .sw-bottom 
+	top: 8px
+	transform: rotate(-140deg)
+	background: #00c4fd
+.sandwich.active .sw-footer 
+	opacity: 0
+	top: 0
+	transform: rotate(180deg)
+	background: #00c4fd
+
+/* Header navigation */
+.header_nav 
+	display: none
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	right: 0
+	background-color: rgba(0, 0, 0, 0.9)
+	overflow: auto
+	z-index: 100
+
+.header_nav_list 
+	//margin-top: 180px
+	text-align: center
+	list-style-type: none
+
+.header_nav_list li:nth-child(1) a 
+	-webkit-animation-duration: 0.4s
+	-moz-animation-duration: 0.4s
+	animation-duration: 0.4s
+.header_nav_list li:nth-child(2) a 
+	-webkit-animation-duration: 0.8s
+	-moz-animation-duration: 0.8s
+	animation-duration: 0.8s
+.header_nav_list li:nth-child(3) a 
+	-webkit-animation-duration: 1.2s
+	-moz-animation-duration: 1.2s
+	animation-duration: 1.2s 
+.header_nav_list li:nth-child(4) a 
+	-webkit-animation-duration: 1.8s
+	-moz-animation-duration: 1.8s
+	animation-duration: 1.6s 
+.header_nav_list li:nth-child(5) a 
+	-webkit-animation-duration: 1.8s
+	-moz-animation-duration: 1.8s
+	animation-duration: 2s
+.header_nav_list li:nth-child(6) a 
+	-webkit-animation-duration: 1.8s
+	-moz-animation-duration: 1.8s
+	animation-duration: 2.1s  
+.header_nav_list a 
+	display: block
+	text-transform: uppercase
+	padding: 20px 0
+	margin: 0
+	font-size: 14px
+	letter-spacing: 5px
+	-webkit-transition: all 0.7s ease
+	-moz-transition: all 0.7s ease
+	transition: all 0.7s ease 
+
+//Blog
+.blog-filter
+	.media
+		text-decoration: none  
+.blog-wrap
+	.portfolio
+		&:hover > img
+			filter: blur(3px)
+		&:hover 
+			.detailed-info-wrap
+				margin-top: 10%
+			.read-more
+				opacity: 1
+				visibility: visible
+	.portfolio-border
+		display: none
+	.name
+		opacity: 1
+		transform: translateY(0%)
+	.read-more
+		position: relative
+		transform: translateX(0%)
+		opacity: 0
+		display: inline-block
+		padding-top: 15%
+.detailed-info-wrap
+	// margin-top: 10%
+	margin-top: 35%
+	transition: all 0.3s ease
+	
+//Main Page
+.main-title
+	margin-left: 12%
+	margin-top: 21vh
+	&--name
+		color: #fff
+		font-family: GothamProBold
+		font-size: 72px
+		text-transform: uppercase
+	&--description
+		color: #fff
+		font-family: GothamProLighter
+		font-size: 32px
+		font-weight: 300
+		text-transform: uppercase
+	.portfolio-link
+		font-size: 1.5rem
+		text-transform: uppercase
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 330px
+		height: 75px
+		border: 1px solid  #7d7f7e
+		border-radius: 38px
+		text-align: center
+		cursor: pointer
+		transition: all 0.3s ease
+		&--position
+			margin-top: 7vh
+		span
+			// float: left
+			margin-right: 10px
+		a
+			display: inline-block
+			width: 100%
+			height: 100%
+			line-height: 74px
+		.fa-angle-right
+			font-size: 20px
+			width: 2px
+			margin-top: -1px	
+		&:hover
+			background-color: #04b7eb
+			border-color: #04b7eb
+			a
+				color: #fff
+.mix
+	display: none
+
+.team-join-form
+	a
+		color: #115bc1
+	h2
+		font-size: 2.4rem
+	h2,	
+	input,
+	textarea
+		margin-bottom: 15px
+	input[type=submit]
+		width: 100%
+		max-width: 400px
+		margin: auto
+.video
+	z-index: 1
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: hidden
+video
+	background-color: black
+	background-position: center center
+	background-size: contain
+	bottom: 0
+	height: 100%
+	object-fit: cover
+	position: absolute
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 3
+.grid
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	background: url(../img/grid.png) repeat
+	z-index: 1
+
+// .contacts-title-bg,
+// .clients-title-bg,
+// .blog-title-bg,
+// .portfolio-title-bg,
+// .about-us-title-bg
+// 	-webkit-background-size: contain
+// 	-moz-background-size: contain
+// 	-o-background-size: contain
+// 	background-size: contain
+// 	background-repeat: no-repeat
+// 	background-position: bottom right
+// 	display: flex
+// 	justify-content: flex-end
+// 	height: 91px
+// 	h1
+// 		align-self: flex-end
+// 		line-height: 50px
+// .contacts-title-bg
+// 	background-image: url("../img/contacts.png")
+// .clients-title-bg
+// 	background-image: url("../img/clients.png")
+// .blog-title-bg
+// 	background-image: url("../img/blog.png")
+// .portfolio-title-bg
+// 	background-image: url("../img/portfolio.png")
+// .about-us-title-bg
+// 	background-image: url("../img/about-us.png")

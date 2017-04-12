@@ -2,33 +2,38 @@
 
 <!-- Start About Us -->
 <div class="about-us">
-	<div class="about-us__navigation --position">
+
+	<div class="col-sm-12 visible-xs">
+		<h1 class="small-title">О нас</h1>
+	</div>
+
+	<div class="about-us__navigation about-us__navigation--position">
 		<ul>
 			<li>
-				<a href="#">О студии</a>
+				<a href="about-us.php">О студии</a>
 			</li>
 			<li>
-				<a href="#">Команда</a>
+				<a href="about-us-team.php">Команда</a>
 			</li>
 			<li>
-				<a href="#">Специализация ADAB   </a>
+				<a href="about-us-specialization.php">Специализация</a>
 			</li>
 			<li>
-				<a href="#">Кейс ADAB</a>
+				<a href="about-us-case.php">Кейс ADAB</a>
 			</li>                
 		</ul>
 	</div>
 	
 	<!-- Start About Us Content -->
-	<div class="about-us-content --position">
-		<div class="__title --about-us-styles ">
-			<div class="__title-bg">О нас</div>
+	<div class="about-us-content about-us-content--position">
+		<div class="about-us-content__title about-us-content__title--styles about-us-title-bg">
+			<!-- <div class="about-us-content__title-bg">О нас</div> -->
 			<h1>О нас</h1>
 		</div>
 
 		<div class="about-us-main about-studio">
 			<img src="images/About-company.jpg" alt="">
-			<div class="__text">
+			<div class="about-studio__text">
 				ADAB - молодая и поразительно креативная команда менеджеров, копирайтеров, дизайнеров, маркетологов и программистов. Для ADAB ваши результаты важнее нашего собственного сна. 
 				<br />
 				<br />
